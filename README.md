@@ -19,3 +19,5 @@ npm start
 ```
 
 The dashboard should open up on your default browser.
+
+**Note**: please make sure you're using latest LTS Node
