@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getOrders } from '../utils/api.js'
+import './OrderList.css'
 
 const OrderList = () => {
   const [orders, setOrders] = useState([])
@@ -15,7 +16,7 @@ const OrderList = () => {
   }, [])
 
   return (
-    <>
+    <div className="OrderList">
       <h2>Orders</h2>
       <ul>
         {orders.map((order) => (
@@ -25,7 +26,7 @@ const OrderList = () => {
         ))}
       </ul>
       <button onClick={fetchOrders}>Refresh</button>
-    </>
+    </div>
   )
 }
 

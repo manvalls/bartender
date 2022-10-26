@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BEER, DRINK } from '../utils/constants.js'
 import { placeOrder } from '../utils/api.js'
+import './Order.css'
 
 const Order = () => {
   const [customer, setCustomer] = useState('')
@@ -19,7 +20,8 @@ const Order = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="Order" onSubmit={handleSubmit}>
+      <h2>Place order</h2>
       <input
         type="text"
         placeholder="Customer"
