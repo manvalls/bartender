@@ -1,10 +1,12 @@
-import { DRINK, BEER } from './constants'
-import { BARTENDER_BUSY } from './errors'
-import { orderDelay } from './config'
+import { DRINK, BEER } from './constants.js'
+import { BARTENDER_BUSY } from './errors.js'
+import { orderDelay } from './config.js'
 
 const orders = []
 
-export const addOrder = (customer, type) => {
+// DB methods are async to simulate a real DB
+
+export const addOrder = async (customer, type) => {
   const ongoingOrders = orders.filter(order => Date.now() - order.time < orderDelay)
 
   if (ongoingOrders.some(order => order.customer === customer && order.type === type)) {
@@ -33,6 +35,6 @@ export const addOrder = (customer, type) => {
   })
 }
 
-export const getOrders = () => {
+export const getOrders = async () => {
   return orders
 }
